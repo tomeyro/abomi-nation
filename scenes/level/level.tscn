@@ -1,0 +1,133 @@
+[gd_scene load_steps=10 format=3 uid="uid://d26038ggcckdv"]
+
+[ext_resource type="Script" path="res://scenes/level/level.gd" id="1_c4mfk"]
+[ext_resource type="PackedScene" uid="uid://bomnan77exwmu" path="res://scenes/char/char.tscn" id="1_i1efr"]
+[ext_resource type="Shader" path="res://scenes/level/level_background.gdshader" id="3_cjroe"]
+[ext_resource type="Script" path="res://scenes/level/ui.gd" id="4_d8vfm"]
+[ext_resource type="Script" path="res://scenes/level/debug.gd" id="4_tynkb"]
+[ext_resource type="PackedScene" uid="uid://cfjs5yc05t5md" path="res://scenes/level/mutation_screen.tscn" id="5_dvq5r"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_l2x55"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_800v3"]
+seamless = true
+noise = SubResource("FastNoiseLite_l2x55")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ctu0g"]
+shader = ExtResource("3_cjroe")
+shader_parameter/color = Color(0.227451, 0.501961, 0.262745, 1)
+shader_parameter/offset = Vector2(2.08165e-12, 2.08165e-12)
+shader_parameter/noise = SubResource("NoiseTexture2D_800v3")
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_c4mfk")
+
+[node name="Background" type="ColorRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_ctu0g")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -666.0
+offset_right = 1712.0
+offset_bottom = 1334.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Char" parent="." instance=ExtResource("1_i1efr")]
+unique_name_in_owner = true
+position = Vector2(577, 326)
+rotation = 0.00494357
+
+[node name="Camera" type="Camera2D" parent="Char"]
+unique_name_in_owner = true
+rotation = -0.00494357
+position_smoothing_enabled = true
+
+[node name="Enemies" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("4_d8vfm")
+
+[node name="Bars" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LifeBar" type="ProgressBar" parent="UI/Bars"]
+unique_name_in_owner = true
+self_modulate = Color(0.968627, 0.184314, 0.223529, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -315.0
+offset_top = 7.0
+offset_right = 315.0
+offset_bottom = 22.0
+grow_horizontal = 2
+value = 50.0
+rounded = true
+show_percentage = false
+
+[node name="Life" type="Label" parent="UI/Bars/LifeBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "LIFE"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="MutationBar" type="ProgressBar" parent="UI/Bars"]
+unique_name_in_owner = true
+self_modulate = Color(0.356863, 0.882353, 0.372549, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -315.0
+offset_top = 28.0
+offset_right = 315.0
+offset_bottom = 43.0
+grow_horizontal = 2
+value = 50.0
+rounded = true
+show_percentage = false
+
+[node name="Label" type="Label" parent="UI/Bars/MutationBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "MUTATION #0"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="MutationScreen" parent="UI" instance=ExtResource("5_dvq5r")]
+unique_name_in_owner = true
+
+[node name="Debug" type="CanvasLayer" parent="."]
+script = ExtResource("4_tynkb")
+
+[node name="Label" type="Label" parent="Debug"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0

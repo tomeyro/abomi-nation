@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds3phpi11plhp"]
+
+[ext_resource type="PackedScene" uid="uid://ba7k81m0t0eq8" path="res://scenes/level/mutation_option.tscn" id="1_7jmid"]
+[ext_resource type="Script" path="res://scenes/level/mutation_block.gd" id="1_uaayw"]
+[ext_resource type="Texture2D" uid="uid://d1iibua2l2ugv" path="res://assets/sprites/New/NewPart.png" id="2_vn7ma"]
+
+[node name="MutationBlock" type="ColorRect"]
+custom_minimum_size = Vector2(200, 200)
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+size_flags_horizontal = 4
+script = ExtResource("1_uaayw")
+new_part_sprite = ExtResource("2_vn7ma")
+
+[node name="Part" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="top_row" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(2.08165e-12, 100)
+layout_mode = 0
+offset_left = -50.0
+offset_top = 210.0
+offset_right = 258.0
+offset_bottom = 310.0
+alignment = 1
+
+[node name="Option1" parent="top_row" instance=ExtResource("1_7jmid")]
+layout_mode = 2
+
+[node name="Option2" parent="top_row" instance=ExtResource("1_7jmid")]
+layout_mode = 2
+
+[node name="Option3" parent="top_row" instance=ExtResource("1_7jmid")]
+layout_mode = 2
+
+[node name="bottom_row" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(2.08165e-12, 100)
+layout_mode = 0
+offset_left = -50.0
+offset_top = 315.0
+offset_right = 258.0
+offset_bottom = 415.0
+alignment = 1
+
+[node name="Option1" parent="bottom_row" instance=ExtResource("1_7jmid")]
+layout_mode = 2
+
+[node name="Option2" parent="bottom_row" instance=ExtResource("1_7jmid")]
+layout_mode = 2
+
+[node name="Option3" parent="bottom_row" instance=ExtResource("1_7jmid")]
+layout_mode = 2

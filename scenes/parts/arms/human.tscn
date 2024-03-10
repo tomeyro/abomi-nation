@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlxocje4a8mbu"]
+
+[ext_resource type="Script" path="res://scenes/parts/part.gd" id="1_3itsy"]
+[ext_resource type="Texture2D" uid="uid://datokcex87ihy" path="res://assets/sprites/Human/Arm.png" id="2_ojuvj"]
+
+[node name="Arm" type="Node2D"]
+script = ExtResource("1_3itsy")
+
+[node name="Arm" type="Sprite2D" parent="."]
+position = Vector2(4, 34)
+texture = ExtResource("2_ojuvj")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://fqxiq8t76pd1"]
+
+[ext_resource type="Script" path="res://scenes/parts/part.gd" id="1_sxxkg"]
+
+[sub_resource type="Gradient" id="Gradient_lhxqa"]
+offsets = PackedFloat32Array(0, 0.428571, 1)
+colors = PackedColorArray(1, 0.525908, 0.460418, 1, 1, 0.329241, 0.652199, 1, 0.576926, 0.000254938, 0.580896, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nvjbr"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ueq77"]
+width = 40
+height = 40
+color_ramp = SubResource("Gradient_lhxqa")
+noise = SubResource("FastNoiseLite_nvjbr")
+
+[node name="New" type="Node2D"]
+script = ExtResource("1_sxxkg")
+
+[node name="New" type="Sprite2D" parent="."]
+texture = SubResource("NoiseTexture2D_ueq77")

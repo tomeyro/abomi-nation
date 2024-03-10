@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyjfc7wj0popg"]
+
+[ext_resource type="Script" path="res://scenes/parts/part.gd" id="1_prgev"]
+[ext_resource type="Texture2D" uid="uid://bl7jmhc3h6ask" path="res://assets/sprites/Human/Leg.png" id="2_dkn70"]
+
+[node name="Leg" type="Node2D"]
+script = ExtResource("1_prgev")
+
+[node name="Leg" type="Sprite2D" parent="."]
+position = Vector2(5, 38)
+texture = ExtResource("2_dkn70")

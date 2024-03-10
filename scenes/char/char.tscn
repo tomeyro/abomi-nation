@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://bomnan77exwmu"]
+
+[ext_resource type="Script" path="res://scenes/char/char.gd" id="1_cdum2"]
+[ext_resource type="PackedScene" uid="uid://cccjn4tcfxktk" path="res://scenes/body/body.tscn" id="1_gg133"]
+[ext_resource type="Resource" uid="uid://bbuybdybxo8g1" path="res://scenes/parts/bodies/human.tres" id="3_wgmdi"]
+[ext_resource type="Resource" uid="uid://c71v6d6ndrptk" path="res://scenes/parts/heads/human.tres" id="4_x0vwo"]
+[ext_resource type="Resource" uid="uid://cb46nkmuio0w4" path="res://scenes/parts/arms/human.tres" id="5_686vo"]
+[ext_resource type="Resource" uid="uid://bxvsaypmlaljj" path="res://scenes/parts/legs/human.tres" id="6_u2muh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mc2pj"]
+height = 58.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tmnkk"]
+height = 58.0
+
+[node name="Char" type="CharacterBody2D"]
+z_index = 1000
+motion_mode = 1
+script = ExtResource("1_cdum2")
+
+[node name="Body" parent="." instance=ExtResource("1_gg133")]
+unique_name_in_owner = true
+position = Vector2(2.1684e-19, -29)
+scale = Vector2(0.2, 0.2)
+bodies = Array[Resource("res://scenes/parts/part_resource.gd")]([ExtResource("3_wgmdi")])
+heads = Array[Resource("res://scenes/parts/part_resource.gd")]([ExtResource("4_x0vwo")])
+arms = Array[Resource("res://scenes/parts/part_resource.gd")]([ExtResource("5_686vo"), ExtResource("5_686vo")])
+legs = Array[Resource("res://scenes/parts/part_resource.gd")]([ExtResource("6_u2muh"), ExtResource("6_u2muh")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -29)
+shape = SubResource("CapsuleShape2D_mc2pj")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_mask = 2
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, -29)
+shape = SubResource("CapsuleShape2D_tmnkk")

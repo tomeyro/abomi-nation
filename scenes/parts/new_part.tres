@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PartResource" load_steps=3 format=3 uid="uid://dxenjtkwkihvw"]
+
+[ext_resource type="Script" path="res://scenes/parts/part_resource.gd" id="1_ubs6n"]
+[ext_resource type="PackedScene" uid="uid://fqxiq8t76pd1" path="res://scenes/parts/new_part.tscn" id="2_sffry"]
+
+[resource]
+script = ExtResource("1_ubs6n")
+tscn = ExtResource("2_sffry")
+title = "New Body Part"
+description = "Select this to add an additional limb or head."

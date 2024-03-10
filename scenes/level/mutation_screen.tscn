@@ -1,0 +1,207 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfjs5yc05t5md"]
+
+[ext_resource type="FontFile" uid="uid://bfyaj7r5gq085" path="res://assets/fonts/Bornneo.ttf" id="1_ixgj0"]
+[ext_resource type="Script" path="res://scenes/level/mutation_screen.gd" id="1_j7n88"]
+[ext_resource type="PackedScene" uid="uid://ds3phpi11plhp" path="res://scenes/level/mutation_block.tscn" id="3_gjxbn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xxivt"]
+line_spacing = 0.5
+font_size = 14
+outline_size = 1
+outline_color = Color(0.113725, 0.113725, 0.113725, 1)
+shadow_color = Color(0, 0, 0, 0.588235)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fr0w2"]
+line_spacing = 0.5
+font_size = 10
+outline_size = 1
+outline_color = Color(0.113725, 0.113725, 0.113725, 1)
+shadow_color = Color(0, 0, 0, 0.588235)
+
+[node name="MutationScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j7n88")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.301961, 0.603922, 0.396078, 0.490196)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 64.0
+offset_bottom = 114.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("1_ixgj0")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[wave][center]mutation time[/center][/wave]"
+
+[node name="MutationBlock1" parent="." instance=ExtResource("3_gjxbn")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -150.0
+offset_right = -120.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MutationBlock2" parent="." instance=ExtResource("3_gjxbn")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 110.0
+offset_top = -150.0
+offset_right = 310.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MutationTitle" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -147.0
+offset_right = 36.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "New Part"
+label_settings = SubResource("LabelSettings_xxivt")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="MutationDescription" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -126.0
+offset_right = 101.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This part gives you an amazing boost, BUT gives you cancer.
+
+Don't worry be happy! :)"
+label_settings = SubResource("LabelSettings_xxivt")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+
+[node name="MutationActions" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Upgrade" type="Label" parent="MutationActions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = 37.0
+offset_right = 96.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "[LONG PRESS] UPGRADE CURRENT PART"
+label_settings = SubResource("LabelSettings_fr0w2")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Replace" type="Label" parent="MutationActions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.5
+offset_top = 37.0
+offset_right = 93.5
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "[LONG PRESS] REPLACE CURRENT PART"
+label_settings = SubResource("LabelSettings_fr0w2")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="New" type="Label" parent="MutationActions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = 37.0
+offset_right = 75.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "[LONG PRESS] ADD NEW PART"
+label_settings = SubResource("LabelSettings_fr0w2")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="None" type="Label" parent="MutationActions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = 37.0
+offset_right = 90.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Select one of the options below"
+label_settings = SubResource("LabelSettings_fr0w2")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

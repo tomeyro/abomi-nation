@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PartResource" load_steps=3 format=3 uid="uid://bxvsaypmlaljj"]
+
+[ext_resource type="Script" path="res://scenes/parts/part_resource.gd" id="1_pu3bq"]
+[ext_resource type="PackedScene" uid="uid://cyjfc7wj0popg" path="res://scenes/parts/legs/human.tscn" id="2_dq0dr"]
+
+[resource]
+script = ExtResource("1_pu3bq")
+tscn = ExtResource("2_dq0dr")
+title = "Human"
+description = "Nothing Special."
