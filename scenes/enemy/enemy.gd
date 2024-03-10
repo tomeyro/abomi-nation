@@ -9,6 +9,8 @@ var attack_cooldown := 0.0
 
 var damage := 10.0
 
+var life_span := 25.0
+
 
 func _ready() -> void:
 	_load_body()
@@ -33,12 +35,16 @@ func _randomize_values() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	_handle_free()
+	_handle_free(delta)
 	_handle_movement(delta)
 	_handle_attack(delta)
 
 
-func _handle_free() -> void:
+func _handle_free(delta: float) -> void:
+	life_span -= delta
+	if life_span <= 0.0:
+		queue_free()
+		return
 	var distance_to_char := global_position - Globals.char.global_position
 	var distance_to_free := Globals.window_size * 0.85
 	if abs(distance_to_char.x) >= distance_to_free.x or abs(distance_to_char.y) >= distance_to_free.y:

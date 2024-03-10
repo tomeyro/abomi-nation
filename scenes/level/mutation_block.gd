@@ -104,11 +104,14 @@ func _on_option_mouse_entered(option):
 			action = "upgrade"
 		else:
 			action = "replace"
+		option.container.get_child(0).scale += Vector2.ONE * .2
 	hover.emit(option.part_res if option.part_res else new_part_res, action)
 
 
 func _on_option_mouse_exited(option):
 	hover_ended.emit(option.part_res if option.part_res else new_part_res)
+	if option and option != self and option.container:
+		option.container.get_child(0).scale -= Vector2.ONE * .2
 	if selecting == option:
 		selecting.update_progress(0, selecting_duration_target)
 		selecting = null
