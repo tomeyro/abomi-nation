@@ -10,5 +10,3 @@ class_name PartResource
 @export var speed := 0.0
 @export var defense := 0.0
 @export var attack := 0.0
-
-@export var code: Script

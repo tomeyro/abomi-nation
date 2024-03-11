@@ -8,15 +8,38 @@ class_name Body
 @export var arms: Array[PartResource]
 @export var legs: Array[PartResource]
 
-
 @onready var bodies_count: int = %Bodies.get_child_count()
 @onready var heads_count: int = %Heads.get_child_count()
 @onready var arms_count: int = %Arms.get_child_count()
 @onready var legs_count: int = %Legs.get_child_count()
 
+@onready var body_owner: Node2D = get_parent()
+@onready var is_char: bool = body_owner is Char
+@onready var char: Char = body_owner if is_char else null
+
+var stats = {
+	"life": 0,
+	"speed": 0,
+	"defense": 0,
+	"attack": 0,
+}
+
 
 func _process(delta: float) -> void:
 	_update_body()
+	_update_stats()
+
+
+func _update_stats() -> void:
+	if char:
+		for stat in stats.keys():
+			stats[stat] = 0.0
+		for part_name in ["Bodies", "Heads", "Arms", "Legs"]:
+			for part_idx in get_node(part_name).get_child_count():
+				var part := get_part(part_name, part_idx)
+				if part:
+					for stat in stats.keys():
+						stats[stat] += part.resource[stat] * part.level
 
 
 func _update_body() -> void:

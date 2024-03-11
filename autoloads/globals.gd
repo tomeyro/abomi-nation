@@ -24,8 +24,6 @@ func _load_parts() -> void:
 		var res := DirAccess.open(part_dir)
 		parts[part] = []
 		for file in res.get_files():
-			if not file.begins_with("vampire") and not file.begins_with("human"):
-				continue
 			if file.ends_with(".tres"):
 				parts[part].append(load(part_dir + "/" + file))
 

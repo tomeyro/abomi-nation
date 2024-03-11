@@ -1,8 +1,9 @@
 extends CharacterBody2D
 class_name Char
 
-
-const SPEED = 300.0
+var base_movement_speed := 200.0
+var movement_speed_step := 25.0
+var movement_speed = 0.0
 
 @onready var body: Node2D = %Body
 
@@ -26,16 +27,21 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	_update_stats()
 	_handle_movement()
 	_update_mutation(delta)
+
+
+func _update_stats():
+	movement_speed = base_movement_speed + (movement_speed_step * body.stats["speed"])
 
 
 func _handle_movement():
 	var direction := Input.get_vector("left", "right", "up", "down")
 	if direction:
-		velocity = direction * SPEED
+		velocity = direction * movement_speed
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
+		velocity = velocity.move_toward(Vector2.ZERO, movement_speed)
 
 	if (velocity.x < 0 and %Body.scale.x > 0) or (velocity.x > 0 and %Body.scale.x < 0):
 		%Body.scale.x = -%Body.scale.x

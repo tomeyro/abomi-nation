@@ -36,7 +36,6 @@ func _ready() -> void:
 func randomize_option(char: Char, not_part: PartResource = null):
 	self.char = char
 	part_name = Globals.parts.keys().pick_random()
-	part_name = "heads"
 
 	for child in part_node.get_children():
 		child.queue_free()

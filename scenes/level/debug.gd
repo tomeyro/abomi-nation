@@ -11,4 +11,5 @@ func _process(delta: float) -> void:
 	var logs = []
 	logs.append("FPS %s" % int(1.0 / delta))
 	logs.append("Enemies %s" % %Enemies.get_child_count())
+	logs.append("Speed %s" % (Globals.char.movement_speed if Globals.char else 0.0))
 	$Label.text = "\n".join(logs)

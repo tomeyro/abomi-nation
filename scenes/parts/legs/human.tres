@@ -8,3 +8,7 @@ script = ExtResource("1_pu3bq")
 tscn = ExtResource("2_dq0dr")
 title = "Human"
 description = "Nothing Special. Average movement speedˆ."
+life = 0.0
+speed = 1.0
+defense = 0.0
+attack = 0.0
