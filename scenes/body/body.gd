@@ -1,5 +1,6 @@
 #@tool
 extends Node2D
+class_name Body
 
 
 @export var bodies: Array[PartResource]
@@ -49,7 +50,7 @@ func _update_parts(part_resources: Array[PartResource], parent: Node2D):
 			break
 
 
-func get_part(part_name: String, part_idx: int):
+func get_part(part_name: String, part_idx: int) -> Part:
 	var part_container: Marker2D = get_node(part_name.to_lower().capitalize()).get_child(part_idx)
 	if part_container.get_child_count():
 		return part_container.get_child(0)
@@ -57,4 +58,6 @@ func get_part(part_name: String, part_idx: int):
 
 
 func level_up_part(part_name: String, part_idx: int):
-	print("LEVEL UP PART!!", get_part(part_name, part_idx))
+	var part: Part = get_part(part_name, part_idx)
+	if part:
+		part.level += 1

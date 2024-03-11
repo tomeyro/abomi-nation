@@ -19,11 +19,9 @@ var sprite: Sprite2D:
 		return _sprite
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@onready var body: Body = get_parent().get_parent().get_parent()
+@onready var body_owner: Node2D = body.get_parent()
+@onready var is_char: bool = body_owner is Char
+@onready var char: Char = (body_owner as Char) if is_char else null
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+var level: int = 1

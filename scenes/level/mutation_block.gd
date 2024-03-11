@@ -33,7 +33,7 @@ func _ready() -> void:
 		option.gui_input.connect(_on_option_gui_input.bind(option))
 
 
-func randomize_option(char: Char, not_part: String = ""):
+func randomize_option(char: Char, not_part: PartResource = null):
 	self.char = char
 	part_name = Globals.parts.keys().pick_random()
 	part_name = "heads"
@@ -41,6 +41,10 @@ func randomize_option(char: Char, not_part: String = ""):
 	for child in part_node.get_children():
 		child.queue_free()
 	part_res = Globals.parts[part_name].pick_random()
+
+	if part_res == not_part:
+		return randomize_option(char, not_part)
+
 	var part: Part = part_res.tscn.instantiate()
 	var part_sprite: Sprite2D = part.sprite.duplicate()
 	part_sprite.position = Vector2.ZERO

@@ -38,7 +38,7 @@ func _process(delta: float) -> void:
 func _on_mutation(char: Char) -> void:
 	get_tree().paused = true
 	mutation_block_1.randomize_option(char)
-	mutation_block_2.randomize_option(char, mutation_block_1.part_name)
+	mutation_block_2.randomize_option(char, mutation_block_1.part_res)
 	visible = true
 
 

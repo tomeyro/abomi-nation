@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://by3ggt4lg1fjl"]
 
-[ext_resource type="Script" path="res://scenes/parts/part.gd" id="1_p7t7j"]
+[ext_resource type="Script" path="res://scenes/parts/heads/vampire.gd" id="1_xmsn3"]
 [ext_resource type="Texture2D" uid="uid://bmbdgne4wys5" path="res://assets/sprites/Heads/Vampire.png" id="2_v275r"]
 
 [node name="Head" type="Node2D"]
-script = ExtResource("1_p7t7j")
+script = ExtResource("1_xmsn3")
 
 [node name="Head" type="Sprite2D" parent="."]
 position = Vector2(2.08165e-12, -42)

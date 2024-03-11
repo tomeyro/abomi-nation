@@ -11,6 +11,4 @@ class_name PartResource
 @export var defense := 0.0
 @export var attack := 0.0
 
-
-func process(delta: float):
-	pass
+@export var code: Script
