@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PartResource" load_steps=3 format=3 uid="uid://du7afkyn1kcci"]
+
+[ext_resource type="Script" path="res://scenes/parts/part_resource.gd" id="1_081mx"]
+[ext_resource type="PackedScene" uid="uid://bsm38v51abd1k" path="res://scenes/parts/heads/ogre.tscn" id="2_jprag"]
+
+[resource]
+script = ExtResource("1_081mx")
+tscn = ExtResource("2_jprag")
+title = "Ogre"
+description = "RAWR! Head strong. But head no so smart, so head slow.
+
+Defense increases each upgrade. Speed decreases."
+life = 0.0
+speed = -1.0
+defense = 3.0
+attack = 0.0

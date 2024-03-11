@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://81pue4ranh52"]
+
+[ext_resource type="Script" path="res://scenes/parts/part.gd" id="1_1sni0"]
+[ext_resource type="Texture2D" uid="uid://cq3gttesnfxse" path="res://assets/sprites/Heads/Block.png" id="2_6rxar"]
+
+[node name="Head" type="Node2D"]
+script = ExtResource("1_1sni0")
+
+[node name="Head" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, -46)
+texture = ExtResource("2_6rxar")

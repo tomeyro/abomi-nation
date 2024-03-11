@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PartResource" load_steps=3 format=3 uid="uid://jhb5qlldgyq4"]
+
+[ext_resource type="Script" path="res://scenes/parts/part_resource.gd" id="1_g0god"]
+[ext_resource type="PackedScene" uid="uid://bthg5xoc3xjs2" path="res://scenes/parts/heads/nosey.tscn" id="2_ksxms"]
+
+[resource]
+script = ExtResource("1_g0god")
+tscn = ExtResource("2_ksxms")
+title = "Nosey"
+description = "You can even smell the colors! And farts from far away....
+
+Average health and resistance. Increases each upgrade."
+life = 1.0
+speed = 0.0
+defense = 1.0
+attack = 0.0

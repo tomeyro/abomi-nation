@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PartResource" load_steps=3 format=3 uid="uid://cfe5lfkga7wo7"]
+
+[ext_resource type="Script" path="res://scenes/parts/part_resource.gd" id="1_j6y0y"]
+[ext_resource type="PackedScene" uid="uid://dtiodxbjtgkrj" path="res://scenes/parts/heads/brain.tscn" id="2_7xir7"]
+
+[resource]
+script = ExtResource("1_j6y0y")
+tscn = ExtResource("2_7xir7")
+title = "Big Brain"
+description = "More health than usual, but you are also less resistent.
+
+Health increases each upgrade, but defense decreases."
+life = 3.0
+speed = 0.0
+defense = -1.0
+attack = 0.0

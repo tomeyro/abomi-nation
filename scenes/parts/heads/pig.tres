@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PartResource" load_steps=3 format=3 uid="uid://cxvrvy0781bod"]
+
+[ext_resource type="Script" path="res://scenes/parts/part_resource.gd" id="1_wfxg8"]
+[ext_resource type="PackedScene" uid="uid://ebmjjy0wagva" path="res://scenes/parts/heads/pig.tscn" id="2_5a7we"]
+
+[resource]
+script = ExtResource("1_wfxg8")
+tscn = ExtResource("2_5a7we")
+title = "Piggy"
+description = "From time to time you'll find truffles to regain heatlh, oink!
+
+Find chance will increase each upgrade."
+life = 0.0
+speed = 0.0
+defense = 0.0
+attack = 0.0
+metadata/find_chance = 1.0

@@ -30,6 +30,7 @@ legs = Array[Resource("res://scenes/parts/part_resource.gd")]([ExtResource("6_u2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -29)
 shape = SubResource("CapsuleShape2D_mc2pj")
+disabled = true
 
 [node name="HitBox" type="Area2D" parent="."]
 collision_mask = 2

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PartResource" load_steps=3 format=3 uid="uid://bf83t05r7s1v1"]
+
+[ext_resource type="Script" path="res://scenes/parts/part_resource.gd" id="1_3llnv"]
+[ext_resource type="PackedScene" uid="uid://brfkh1dkh5eof" path="res://scenes/parts/heads/googly.tscn" id="2_7xydr"]
+
+[resource]
+script = ExtResource("1_3llnv")
+tscn = ExtResource("2_7xydr")
+title = "Googly"
+description = "Blame kenney for this one. I guess you can see better? O.o
+
+Average health and movement speed. Increases each upgrade."
+life = 1.0
+speed = 0.0
+defense = 1.0
+attack = 0.0

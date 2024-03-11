@@ -24,6 +24,7 @@ script = ExtResource("1_c4mfk")
 
 [node name="Background" type="ColorRect" parent="."]
 unique_name_in_owner = true
+z_index = -4096
 material = SubResource("ShaderMaterial_ctu0g")
 anchors_preset = 8
 anchor_left = 0.5
@@ -44,7 +45,6 @@ rotation = 0.00494357
 
 [node name="Camera" type="Camera2D" parent="Char"]
 unique_name_in_owner = true
-rotation = -0.00494357
 position_smoothing_enabled = true
 
 [node name="Enemies" type="Node2D" parent="."]

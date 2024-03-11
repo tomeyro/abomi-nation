@@ -7,4 +7,10 @@
 script = ExtResource("1_esqel")
 tscn = ExtResource("2_gdia4")
 title = "Human"
-description = "Nothing special. Average statsˆ."
+description = "Just a regular human head. Boring.
+
+Average health and resistance. Increases each upgrade."
+life = 1.0
+speed = 0.0
+defense = 1.0
+attack = 0.0

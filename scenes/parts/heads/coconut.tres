@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PartResource" load_steps=3 format=3 uid="uid://qcoiwhhlh7wd"]
+
+[ext_resource type="Script" path="res://scenes/parts/part_resource.gd" id="1_nlkce"]
+[ext_resource type="PackedScene" uid="uid://baoe7c1m2qwx4" path="res://scenes/parts/heads/coconut.tscn" id="2_ems7e"]
+
+[resource]
+script = ExtResource("1_nlkce")
+tscn = ExtResource("2_ems7e")
+title = "Coconut"
+description = "It shoots coconuts! They work great against zombies, hope they work against abominations as well.
+
+Damage and attack speed increases each upgrade."
+life = 0.0
+speed = 0.0
+defense = 0.0
+attack = 0.0

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PartResource" load_steps=3 format=3 uid="uid://bnffis2i6rhmj"]
+
+[ext_resource type="Script" path="res://scenes/parts/part_resource.gd" id="1_qa2ql"]
+[ext_resource type="PackedScene" uid="uid://81pue4ranh52" path="res://scenes/parts/heads/block.tscn" id="2_eb6oc"]
+
+[resource]
+script = ExtResource("1_qa2ql")
+tscn = ExtResource("2_eb6oc")
+title = "Block"
+description = "You will feel like you can mine and craft really good.
+
+Average health and resistance. Increases each upgrade."
+life = 1.0
+speed = 0.0
+defense = 1.0
+attack = 0.0

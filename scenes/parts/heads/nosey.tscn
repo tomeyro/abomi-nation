@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bthg5xoc3xjs2"]
+
+[ext_resource type="Script" path="res://scenes/parts/part.gd" id="1_0dgc4"]
+[ext_resource type="Texture2D" uid="uid://dvvp6gsan2kbt" path="res://assets/sprites/Heads/Nosey.png" id="2_jvktn"]
+
+[node name="Head" type="Node2D"]
+script = ExtResource("1_0dgc4")
+
+[node name="Head" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, -43)
+texture = ExtResource("2_jvktn")

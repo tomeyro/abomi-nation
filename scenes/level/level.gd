@@ -1,9 +1,9 @@
 extends Node2D
 
 
-var spawn_cooldown_duration := 0.25
+var spawn_cooldown_duration := 0.5
 var spawn_cooldown := 0.0
-var spawn_max := 100
+var spawn_max := 300
 
 @onready var enemy_tscn := preload("res://scenes/enemy/enemy.tscn")
 
@@ -34,5 +34,8 @@ func _spawn(qty: int = 1) -> void:
 		var spawn_position: Vector2 = %Char.global_position + (spawn_direction * (Globals.window_size * 0.75))
 		var enemy = enemy_tscn.instantiate()
 		enemy.global_position = spawn_position
-		enemy.z_index = 990 - (10 * %Enemies.get_child_count())
+		var z_index = 990 - (10 * %Enemies.get_child_count())
+		while z_index < -990:
+			z_index += 990 * 2
+		enemy.z_index = z_index
 		%Enemies.add_child(enemy)

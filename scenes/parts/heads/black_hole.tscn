@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctqv814n14nuo"]
+
+[ext_resource type="Script" path="res://scenes/parts/part.gd" id="1_qpsk8"]
+[ext_resource type="Texture2D" uid="uid://6ug1mrqcdtd7" path="res://assets/sprites/Heads/BlackHole.png" id="2_aqcqm"]
+
+[node name="Head" type="Node2D"]
+script = ExtResource("1_qpsk8")
+
+[node name="Head" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, -42)
+rotation = -0.143158
+texture = ExtResource("2_aqcqm")

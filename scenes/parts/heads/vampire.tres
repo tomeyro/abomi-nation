@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PartResource" load_steps=3 format=3 uid="uid://b1ujbssxlsysg"]
+
+[ext_resource type="Script" path="res://scenes/parts/part_resource.gd" id="1_nbjl4"]
+[ext_resource type="PackedScene" uid="uid://by3ggt4lg1fjl" path="res://scenes/parts/heads/vampire.tscn" id="2_ljmgj"]
+
+[resource]
+script = ExtResource("1_nbjl4")
+tscn = ExtResource("2_ljmgj")
+title = "Vampire"
+description = "The sun will damage you slowly... But absorbing abomitation drops will restore your health!
+
+Regained health will increase each upgrade, but the sun damage will increase."
+life = 0.0
+speed = 0.0
+defense = 0.0
+attack = 0.0

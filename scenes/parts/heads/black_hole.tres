@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PartResource" load_steps=3 format=3 uid="uid://darovatu7ry5"]
+
+[ext_resource type="Script" path="res://scenes/parts/part_resource.gd" id="1_sfwr8"]
+[ext_resource type="PackedScene" uid="uid://ctqv814n14nuo" path="res://scenes/parts/heads/black_hole.tscn" id="2_i3moa"]
+
+[resource]
+script = ExtResource("1_sfwr8")
+tscn = ExtResource("2_i3moa")
+title = "Black Hole"
+description = "Absorb drops in the nearby area. However, abominations are also pulled towards you!
+
+Area increases each upgrade."
+life = 0.0
+speed = 0.0
+defense = 0.0
+attack = 0.0
+metadata/area_size = 1.0

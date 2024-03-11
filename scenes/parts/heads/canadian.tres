@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PartResource" load_steps=3 format=3 uid="uid://brqlridjjv7jr"]
+
+[ext_resource type="Script" path="res://scenes/parts/part_resource.gd" id="1_jr2ko"]
+[ext_resource type="PackedScene" uid="uid://cd6e0t22balh1" path="res://scenes/parts/heads/canadian.tscn" id="2_nc64f"]
+
+[resource]
+script = ExtResource("1_jr2ko")
+tscn = ExtResource("2_nc64f")
+title = "Splitty"
+description = "Mutation incoming, eh? Sorry 'bout that.
+
+Average health and movement speed. Increases each upgrade."
+life = 0.0
+speed = 0.0
+defense = 0.0
+attack = 0.0
